@@ -1,6 +1,6 @@
 # AGENTS.md: rules for every AI coding agent (Codex, Claude, etc.)
 
-You're working on **BEFORE IT DROPS** (set in the city of Vice Slime; repo name: Robot-Metabolism), a Godot 4.3 (GDScript) 2D platformer for the Haven Hack Club game jam (theme: "Bounce Back"), with a GTA VI parody/meme layer.
+You're working on **BEFORE IT DROPS** (set in the city of Vice Slime; repo: 7amadatonystark/before-it-drops), a Godot 4.3 (GDScript) 2D platformer for the Haven Hack Club game jam (theme: "Bounce Back"), with a GTA VI parody/meme layer.
 
 **Story:** GTA VI drops today. Three friends (SPARK, ZOOM, BRAINS) fight through the line of rival buyers (meme hamsters) to the store, where THE HAMSTER GODFATHER, a scalper, is holding the LAST COPY.
 **Game flow:** `scenes/menu.tscn` (main scene, Mazen's title) → `scenes/character_select.tscn` → `scenes/story_level.tscn` built from the text maps in `scripts/levels.gd` (Level 1 The Docks → 2 Neon Streets → 3 The Roof; `Engine.get_meta("level_index")`) → `scenes/boss_arena.tscn` (in front of the game store: Hamster Godfather, then THE VICE QUEEN if `assets/boss/final/body.png` exists) → ending ("You got the LAST COPY"). Co-op (R on the select screen) plays this whole path with 2–3 players.
