@@ -88,6 +88,11 @@ func bounce_to(x: float, y: float, limit := 240, pad = null):
 	var bounced = false
 	for i in limit:
 		steer(x if bounced else bx)
+		# A hit can consume the first jump during stun; re-press from safe
+		# ground rather than holding an input that can no longer trigger.
+		if not bounced and i > 40 and pl.is_on_floor():
+			if i % 40 == 0: Input.action_release("jump")
+			if i % 40 == 2: Input.action_press("jump")
 		await tick()
 		if pl.velocity.y < -350: bounced = true
 		if bounced and absf(pl.position.x-x)<5 and absf(pl.position.y-y)<3 and pl.is_on_floor():
@@ -118,7 +123,7 @@ func fight_gate(limit := 1800):
 		var enemies = get_nodes_in_group("gatekeeper").filter(func(e): return not e.has_meta("dying"))
 		if enemies.is_empty():
 			Input.action_release("move_down")
-			Input.action_release("jump")
+			# Preserve a final pogo so the player can return from an edge.
 			print("GATE BEATEN ",fighter," deaths ",gm.deaths)
 			return true
 		var e = enemies[0]

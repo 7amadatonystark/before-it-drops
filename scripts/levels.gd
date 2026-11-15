@@ -68,7 +68,7 @@ const LEVELS := [
 	},
 	{
 		"title": "LEVEL 3: THE ROOF",
-		"line": "The store is on the top floor. Two falls stand between you and the game.",
+		"line": "The last copy is upstairs. Your rivals are the way up.",
 		"tiles": "stone", "sky": "night", "backdrop": "roof",
 		"signs": {"1": "Fall here first.", "2": "Then fall here.", "3": "THE STORE (beat the Line Cutter)"},
 		"exit": "ENTER THE STORE >",

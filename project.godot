@@ -23,6 +23,7 @@ Sfx="*res://scripts/sfx.gd"
 PauseMenu="*res://scripts/pause_menu.gd"
 GameFeel="*res://scripts/game_feel.gd"
 SceneTransition="*res://scripts/scene_transition.gd"
+FighterMotion="*res://scripts/fighter_motion.gd"
 
 [display]
 

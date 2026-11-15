@@ -136,7 +136,7 @@ func _build_controls(center: CenterContainer) -> void:
 	var grid := GridContainer.new()
 	grid.columns = 3
 	grid.add_theme_constant_override("h_separation", 24)
-	grid.add_theme_constant_override("v_separation", 12)
+	grid.add_theme_constant_override("v_separation", 10)
 	controls_card.add_child(grid)
 	var rows := [
 		["ACTION", "KEYBOARD", "PS4"],
