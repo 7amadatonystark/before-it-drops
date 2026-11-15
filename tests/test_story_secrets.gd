@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # Each optional high coin is reached by real inputs and an existing body bounce.
 # Godot 4.3: godot --headless --fixed-fps 60 -s tests/test_story_secrets.gd -- 1 spark
 extends "res://tests/test_story_routes.gd"

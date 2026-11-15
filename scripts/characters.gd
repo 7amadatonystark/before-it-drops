@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # CHARACTER REGISTRY: the playable fighters, their perks, and how their sprite sheets map to animations.
 # Frames live in res://assets/characters/<id>/<sheet_anim>_<n>.png (cut from the team's character sheets).
 # Rename a fighter: change "name" below. The chosen id is stored in Engine meta "character".

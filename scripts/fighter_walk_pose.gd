@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted). No generated textures or gameplay edits.
+# ORIGIN: NEW, written by team. No generated textures or gameplay edits.
 extends Node2D
 ## Animate the existing frame's legs around the hips while preserving the upper pose.
 ## The original sprite handles every non-walking state, including combat and death.

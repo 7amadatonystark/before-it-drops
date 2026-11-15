@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # Zero-death Roof witness: flame pogo, spike pogo/dash, Line Cutter, physical exit.
 # Fresh level, live enemies, real inputs. No body/health/position overrides.
 # Godot 4.3: godot --headless --fixed-fps 60 -s tests/test_min_deaths_roof.gd -- 3 spark

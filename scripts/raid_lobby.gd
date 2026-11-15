@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # BOSS RAID LOBBY: up to 3 players on one screen.
 #   PS4 controller: CROSS = join, LEFT/RIGHT (d-pad / stick) = change fighter, CIRCLE = leave, OPTIONS = start
 #   Keyboard:       ENTER = join (then ENTER = start), ← → = change fighter, BACKSPACE = leave, ESC = back

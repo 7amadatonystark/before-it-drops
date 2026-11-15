@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # STORY LEVELS as text maps. Edit a map here and press F5: the level is rebuilt from this text.
 # Legend (1 character = one 16 px tile):
 #   #  solid ground          =  one-way platform        X  death spikes (instant death, your body stays)

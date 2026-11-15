@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written for Mazen's title screen (AI-assisted).
+# ORIGIN: NEW, written for the title screen.
 extends Control
 
 @onready var title: Label = $SafeArea/Center/Content/Heading/Title

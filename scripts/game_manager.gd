@@ -1,5 +1,5 @@
 # ORIGIN: Brackeys tutorial (human-written): score + add_point().
-# MODIFIED BY TEAM (AI-assisted): Hollow Knight-style systems:
+# MODIFIED BY TEAM: Hollow Knight-style systems:
 #   MASKS (health), GEO (coins), BENCHES (checkpoint + heal), hazard respawn,
 #   enemy HP, and THE TWIST: when you die, your body stays as a BOUNCE PAD holding your geo.
 #   Hit your body with the nail (or pogo it) to get your geo back. Bounce back!

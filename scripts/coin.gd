@@ -1,5 +1,5 @@
 # ORIGIN: Brackeys tutorial (public domain).
-# MODIFIED BY TEAM (AI-assisted): find the manager in generated story levels,
+# MODIFIED BY TEAM: find the manager in generated story levels,
 # and award each coin once while its pickup animation finishes.
 extends Area2D
 

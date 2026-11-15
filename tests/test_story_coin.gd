@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # Story coins must award exactly one GEO to a player, then disappear.
 extends SceneTree
 

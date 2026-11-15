@@ -1,5 +1,5 @@
 # ORIGIN: Brackeys tutorial (human-written, public domain). Movement, gravity, jump, animations = Brackeys.
-# MODIFIED BY TEAM (AI-assisted): Hollow Knight-style moves: nail attack (side/up/down),
+# MODIFIED BY TEAM: Hollow Knight-style moves: nail attack (side/up/down),
 # POGO (down-slash bounces you), dash, masks/knockback, hazard respawn, bouncing on old bodies.
 extends CharacterBody2D
 

@@ -1,4 +1,4 @@
-# ORIGIN: NEW, test script written by team (AI-assisted).
+# ORIGIN: NEW, test script written by team.
 # Co-op BOSS RAID test: 3 players spawn, take separate damage, a dead player's body bounces a teammate.
 extends SceneTree
 

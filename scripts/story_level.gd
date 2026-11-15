@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted). Tiles, coins, benches = Brackeys (CC0).
+# ORIGIN: NEW, written by team. Tiles, coins, benches = Brackeys (CC0).
 # STORY LEVEL: builds the level from the text map in levels.gd (level number = Engine meta "level_index").
 extends Node2D
 

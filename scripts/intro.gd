@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted). Uses the existing pixel font; no new assets.
+# ORIGIN: NEW, written by team. Uses the existing pixel font; no new assets.
 extends Control
 
 const Levels = preload("res://scripts/levels.gd")

@@ -1,4 +1,4 @@
-# ORIGIN: NEW, integration test written by team (AI-assisted).
+# ORIGIN: NEW, integration test written by team.
 # Run: godot --headless -s tests/test_intro.gd
 extends SceneTree
 

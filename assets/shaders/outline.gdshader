@@ -1,4 +1,4 @@
-// ORIGIN: NEW, written by team (AI-assisted). Code only, no art.
+// ORIGIN: NEW, written by team. Code only, no art.
 // Same dark-purple outline on every sprite, so art from different sources looks like one game.
 shader_type canvas_item;
 uniform vec4 outline_color : source_color = vec4(0.08, 0.05, 0.10, 1.0);

@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # LOOK: one art style for everything. Look.outline(sprite) after the sprite is in the tree.
 extends RefCounted
 

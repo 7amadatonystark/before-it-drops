@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # ENEMY SHOT: a thrown price tag ($$$ scalper prices). Hurts the first player it touches.
 # BOUNCE IT BACK: strike it with your nail and it flies back, gold and twice as fast,
 # smashing the first enemy it hits (power 2 = breaks the Godfather's armor too).

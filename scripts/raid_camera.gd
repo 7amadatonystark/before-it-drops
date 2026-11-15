@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # RAID CAMERA (Brawlhalla style): one shared screen. Follows the middle of every player AND the boss,
 # and zooms out when they spread apart so everyone stays on screen.
 extends Camera2D

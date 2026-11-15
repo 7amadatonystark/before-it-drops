@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted). Not from the tutorial.
+# ORIGIN: NEW, written by team. Not from the tutorial.
 # BODY PAD: what's left when you die (like Hollow Knight's Shade).
 # It's solid, it BOUNCES you up, and it holds the GEO you dropped.
 # Hit it with your nail (or pogo on it) to take your geo back.

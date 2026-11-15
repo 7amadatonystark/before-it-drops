@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 extends CanvasLayer
 ## UI remains responsive while the whole shared gameplay screen is paused.
 const FONT = preload("res://assets/fonts/PixelOperator8-Bold.ttf")

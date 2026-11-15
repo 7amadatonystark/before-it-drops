@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted). Sprite = Brackeys slime (CC0), scaled + tinted.
+# ORIGIN: NEW, written by team. Sprite = Brackeys slime (CC0), scaled + tinted.
 # THE HAMSTER GODFATHER (boss): the scalper who bought every copy of the game.
 # (Originally the Slime King.) You can ONLY hurt him by pogoing on his head (down-slash from above).
 # Side hits just CLANK off. He hops at you and slams the ground; in phase 2 he spawns slimes.

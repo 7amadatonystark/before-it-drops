@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted). Original characters drawn in code (no image files).
+# ORIGIN: NEW, written by team. Original characters drawn in code (no image files).
 # RIVAL BUYERS: other people in line for the last copy.
 #   "scalper"     5 backpacks of copies, throws price tags          3 HP
 #   "streamer"    ring light + headset, zig-zags, spams chat         3 HP, fast

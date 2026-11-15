@@ -8,13 +8,7 @@
 | 3:00 → 4:30 | Bug fixes only, upload to itch.io, practice the pitch (play the raid live with 3 PS4 pads) |
 | **4:30 PM** | Submit (30 min buffer before the 5:00 deadline) |
 
-## How to start an agent
-- Ziko → `agents/ZIKO.md` (levels) · Mazen → `agents/MAZEN.md` (intro, pause, game feel)
-- Shared rules + required progress report → `AGENTS.md`
-- First message to Codex: **"I'm Ziko. Pull main. Read AGENTS.md and agents/ZIKO.md, then do Task 1."** (or Mazen)
-- After each task: paste the PROGRESS REPORT in the team chat and open a pull request.
-
-## Abdullah (with Claude)
+## Abdullah
 - [x] Core: bodies = bounce pads holding your geo · Hollow Knight moves (nail, pogo, dash, masks, benches, SOUL)
 - [x] 3 fighters + select screen · specials · power shot
 - [x] Story mode: 3 levels (text maps) + hamster guards + Hamster Godfather boss + ending

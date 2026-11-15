@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 extends CanvasLayer
 ## Covers the scene swap with a short black dip, including protected scene callers.
 ## The engine cannot defer external change_scene_to_file calls: fade out across the

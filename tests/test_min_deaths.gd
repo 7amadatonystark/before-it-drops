@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # Zero-death witnesses for Docks and Neon Streets, including scene transitions.
 # Uses live enemies and real inputs, with no health/position overrides.
 # Godot 4.3: godot --headless --fixed-fps 60 -s tests/test_min_deaths.gd -- 1 spark

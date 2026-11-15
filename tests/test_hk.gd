@@ -1,4 +1,4 @@
-# ORIGIN: NEW, test script written by team (AI-assisted).
+# ORIGIN: NEW, test script written by team.
 # Tests the Hollow Knight-style systems. Run: godot --headless -s tests/test_hk.gd
 extends SceneTree
 

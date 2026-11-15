@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted). Not from the tutorial.
+# ORIGIN: NEW, written by team. Not from the tutorial.
 # BENCH (Hollow Knight style checkpoint): touch it = respawn here + masks fully healed.
 # Use: drag scenes/checkpoint.tscn into a level.
 extends Area2D

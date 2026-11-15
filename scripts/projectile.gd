@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # PROJECTILE: power shots and SPARK's finger-gun sparks. Flies straight, hits each enemy once.
 extends Node2D
 

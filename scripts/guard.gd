@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted). Art: hamster meme drawings supplied by the team.
+# ORIGIN: NEW, written by team. Art: hamster meme drawings supplied by the team.
 # GUARD = a rival buyer standing in line for the game. Walks back and forth, hurts on touch.
 #   kind "lolli": 2 HP, slow           (lollipop hamster)
 #   kind "smug":  3 HP, faster         (smug hamster)

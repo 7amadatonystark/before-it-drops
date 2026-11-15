@@ -1,5 +1,5 @@
 # ORIGIN: Brackeys tutorial (human-written): Area2D that hurts on touch.
-# MODIFIED BY TEAM (AI-assisted): now costs 1 MASK instead of reloading the level (Hollow Knight style).
+# MODIFIED BY TEAM: now costs 1 MASK instead of reloading the level (Hollow Knight style).
 #   leaves_body = true  -> enemy (slime): knockback + lose a mask
 #   leaves_body = false -> hazard (spikes, pits): lose a mask + respawn at last safe ground
 #   instant_kill = true -> DEATH SPIKES: you die right away and your body stays HERE (for "die on purpose" puzzles)

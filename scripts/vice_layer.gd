@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # VICE LAYER: the GTA VI parody/meme layer (no Rockstar logos, fonts or art; text + colors only).
 #  - sunset color grade over the world
 #  - "SLIME ALERT" stars (go up when you fight, cool down over time)

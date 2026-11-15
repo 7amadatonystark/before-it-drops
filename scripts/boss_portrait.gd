@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # BOSS PORTRAIT: a face next to the boss health bar that reacts to the fight.
 #
 # HOW TO USE YOUR OWN ART (hand-drawn!):

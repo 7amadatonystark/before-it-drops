@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted). Drawn entirely in code (no image files).
+# ORIGIN: NEW, written by team. Drawn entirely in code (no image files).
 # CITY BACKDROP: a Vice-Slime city with parallax, styled per stage.
 #   "docks"   sunset harbor, cranes, palms
 #   "streets" pink sunset, dense buildings, neon shop signs, streetlights

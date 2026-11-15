@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # Scripted story playtest with real inputs, enemies, health, and scene transitions.
 # No teleporting, health overrides, enemy removal, or movement changes.
 # Godot 4.3: godot --headless --fixed-fps 60 -s tests/test_story_routes.gd -- 1 spark

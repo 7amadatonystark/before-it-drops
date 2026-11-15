@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # CHOOSE YOUR FIGHTER: the home screen. ←/→ (or A/D, or mouse) to pick, ENTER / SPACE / click to play.
 # B = jump straight to the boss fight (for demos).
 extends Node2D

@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # Exercise actual movement and visual-state handoff for solo/co-op fighters.
 extends SceneTree
 const PLAYER = preload("res://scenes/player.tscn")

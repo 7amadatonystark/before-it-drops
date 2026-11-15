@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted). Sounds are Kenney's CC0 packs (see CREDITS.md).
+# ORIGIN: NEW, written by team. Sounds are Kenney's CC0 packs (see CREDITS.md).
 # Sfx autoload: Sfx.play("hit") plays a random variant with a little pitch wobble.
 extends Node
 

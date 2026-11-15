@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # Catch unsupported enemy placements in the actual generated collision map.
 # Run with Godot 4.3: godot --headless -s tests/test_story_layout.gd
 extends SceneTree

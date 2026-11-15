@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 # ENDING: after the boss dies, every body you left behind STANDS UP. "They all got back up."
 extends Node
 

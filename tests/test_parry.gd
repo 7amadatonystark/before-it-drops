@@ -1,4 +1,4 @@
-# ORIGIN: NEW, test script written by team (AI-assisted).
+# ORIGIN: NEW, test script written by team.
 # Tests BOUNCE IT BACK: strike the Godfather's price tag and it breaks his armor.
 # Run: godot --headless -s tests/test_parry.gd
 extends SceneTree

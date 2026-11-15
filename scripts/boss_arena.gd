@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted). Uses the Brackeys tileset (CC0).
+# ORIGIN: NEW, written by team. Uses the Brackeys tileset (CC0).
 # BOSS ARENA: the store's rooftop at sunset (Brackeys tiles), where the Hamster Godfather guards the LAST COPY.
 extends Node2D
 

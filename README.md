@@ -107,8 +107,7 @@ Levels are text maps in `scripts/levels.gd`.
 4. Pits = hazard killzone (`leaves_body = false`): costs 1 mask, puts you back on the edge.
 
 ## Team
-- **Abdullah + Claude:** core mechanics (protected scripts), merging, web export, pitch.
-- **Ziko + Codex:** levels → `agents/ZIKO.md`
-- **Mazen + Codex:** menus, UI, game feel → `agents/MAZEN.md`
-- Rules for every agent → `AGENTS.md`
+- **Abdullah Bedir:** core mechanics, bosses, co-op, merging, web build, pitch.
+- **Ziko:** levels, secrets, level tests.
+- **Mazen Ragab:** title screen, story intro, pause menu, game feel, controls card.
 

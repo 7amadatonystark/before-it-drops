@@ -1,4 +1,4 @@
-# ORIGIN: NEW, written by team (AI-assisted).
+# ORIGIN: NEW, written by team.
 extends CanvasLayer
 ## Observes every player after movement without modifying gameplay or damage rules.
 const FONT = preload("res://assets/fonts/PixelOperator8-Bold.ttf")

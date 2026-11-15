@@ -1,4 +1,4 @@
-# ORIGIN: NEW, demo-recording script (AI-assisted). Plays the whole game automatically for the trailer:
+# ORIGIN: NEW, demo-recording script. Plays the whole game automatically for the trailer:
 # title -> story intro -> fighter select -> co-op lobby -> Levels 1-3 with 3 players -> the Godfather -> ending.
 # Record: godot --path . -s tests/demo_full.gd --write-movie out.avi --fixed-fps 60
 # (timings below are in 30 fps 'beats'; movement runs every 60 fps physics tick so it's smooth)
