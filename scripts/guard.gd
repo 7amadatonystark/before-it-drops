@@ -7,6 +7,7 @@
 extends Node2D
 
 const Look = preload("res://scripts/look.gd")   # shared outline style
+const Navigation = preload("res://scripts/enemy_navigation.gd")
 
 const KILLZONE_SCENE = preload("res://scenes/killzone.tscn")
 const STATS := {
@@ -16,13 +17,12 @@ const STATS := {
 }
 
 var kind := "lolli"
-var dir := -1.0
+var dir := 1.0 # preserve the old effective startup heading, without a cold-ray flip
 var vel_y := 0.0
 var hop_t := 1.5
 var sprite: Sprite2D
-var ray_wall: RayCast2D
-var ray_floor: RayCast2D
 var t := 0.0
+var _warmup := 2
 
 
 func _ready() -> void:
@@ -46,42 +46,46 @@ func _ready() -> void:
 	shape.position = Vector2(0, -s.height * 0.4)
 	kz.add_child(shape)
 	add_child(kz)
-	ray_wall = RayCast2D.new()
-	ray_wall.position = Vector2(0, -6)
-	ray_wall.target_position = Vector2(10, 0)
-	add_child(ray_wall)
-	ray_floor = RayCast2D.new()
-	ray_floor.position = Vector2(8, -2)
-	ray_floor.target_position = Vector2(0, 10)
-	add_child(ray_floor)
 	t = randf() * 10.0
 
 
 func _physics_process(delta: float) -> void:
 	if has_meta("dying"):
 		return
+	# Let newly built TileMap collision enter the physics world before patrolling.
+	if _warmup > 0:
+		_warmup -= 1
+		return
 	t += delta
 	var s: Dictionary = STATS[kind]
-	ray_wall.target_position.x = 10.0 * dir
-	ray_floor.position.x = 8.0 * dir
-	var on_ground := vel_y >= 0.0 and ray_floor.is_colliding() or _floor_below()
+	var ground := Navigation.surface(self, global_position)
+	var grounded := vel_y >= 0.0 and not ground.is_empty()
+	if grounded:
+		global_position.y = ground.position.y
+		vel_y = 0.0
 	if s.hop:
 		hop_t -= delta
+	if s.hop and grounded:
 		var p = _nearest_player()
-		if p and hop_t <= 0.0 and _floor_below():
-			hop_t = randf_range(1.2, 2.0)
-			dir = signf(p.global_position.x - global_position.x)
-			vel_y = -230.0
-	# turn around at walls and edges
-	if ray_wall.is_colliding() or (_floor_below() and not ray_floor.is_colliding() and vel_y >= 0.0):
-		dir = -dir
-	position.x += dir * s.speed * delta * (1.6 if vel_y < 0.0 else 1.0)
-	# simple gravity
-	if not _floor_below() or vel_y < 0.0:
-		vel_y += 700.0 * delta
-		position.y += vel_y * delta
-		if vel_y > 0.0 and _floor_below():
-			vel_y = 0.0
+		if p and hop_t <= 0.0:
+			var toward := signf(p.global_position.x - global_position.x)
+			if Navigation.safe_hop(self, toward, s.speed, -230.0, s.height):
+				hop_t = randf_range(1.2, 2.0)
+				dir = toward
+				vel_y = -230.0
+				grounded = false
+			else:
+				hop_t = 0.35 # reconsider if the player moves; never hop blindly into a pit
+	if grounded:
+		var step := Navigation.walk(self, dir, s.speed * delta, s.height)
+		global_position = step.position
+		dir = step.direction
+	else:
+		vel_y += Navigation.GRAVITY * delta
+		var air_speed: float = s.speed * (1.6 if vel_y < 0.0 else 1.0)
+		var step := Navigation.flight(self, global_position, Vector2(dir * air_speed, vel_y), delta, s.height)
+		global_position = step.position
+		vel_y = step.velocity.y
 	sprite.flip_h = dir > 0
 	# waddle
 	var w := 1.0 + sin(t * 10.0) * 0.06
@@ -90,10 +94,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _floor_below() -> bool:
-	var space := get_world_2d().direct_space_state
-	var q := PhysicsRayQueryParameters2D.create(global_position + Vector2(0, -2), global_position + Vector2(0, 2))
-	q.collision_mask = 1
-	return not space.intersect_ray(q).is_empty()
+	return not Navigation.surface(self, global_position).is_empty()
 
 
 func _nearest_player():

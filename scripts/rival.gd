@@ -8,6 +8,7 @@ extends Node2D
 
 const KILLZONE_SCENE = preload("res://scenes/killzone.tscn")
 const EnemyShot = preload("res://scripts/enemy_shot.gd")
+const Navigation = preload("res://scripts/enemy_navigation.gd")
 const FONT = preload("res://assets/fonts/PixelOperator8-Bold.ttf")
 const STATS := {
 	"scalper": {"hp": 3, "speed": 26.0, "h": 26.0},
@@ -23,16 +24,16 @@ const LINES := {
 }
 
 var kind := "scalper"
-var dir := -1.0
+var dir := 1.0 # preserve the old effective startup heading, without a cold-ray flip
 var t := 0.0
 var talk_t := 2.0
 var shoot_t := 2.0
 var state := "walk"          # line cutter: walk / tell / charge / stunned
 var state_t := 1.5
 var art: Node2D
-var ray_wall: RayCast2D
-var ray_floor: RayCast2D
 var max_hp := 1
+var _warmup := 2
+var vel_y := 0.0
 
 
 func _ready() -> void:
@@ -53,46 +54,46 @@ func _ready() -> void:
 	shape.position = Vector2(0, -s.h * 0.45)
 	kz.add_child(shape)
 	add_child(kz)
-	ray_wall = RayCast2D.new()
-	ray_wall.position = Vector2(0, -8)
-	add_child(ray_wall)
-	ray_floor = RayCast2D.new()
-	ray_floor.target_position = Vector2(0, 10)
-	ray_floor.position = Vector2(0, -2)
-	add_child(ray_floor)
 	t = randf() * 5.0
 
 
 func _physics_process(delta: float) -> void:
 	if has_meta("dying"):
 		return
+	if _warmup > 0:
+		_warmup -= 1
+		return
 	t += delta
 	art.queue_redraw()
 	var s: Dictionary = STATS[kind]
+	var ground := Navigation.surface(self, global_position)
+	if ground.is_empty():
+		vel_y += Navigation.GRAVITY * delta
+		var fall := Navigation.flight(self, global_position, Vector2(0, vel_y), delta, s.h)
+		global_position = fall.position
+		vel_y = fall.velocity.y
+		return # settle before choosing a patrol or charge direction
+	global_position.y = ground.position.y
+	vel_y = 0.0
 	var p = _nearest_player(260.0)
-	ray_wall.target_position = Vector2(12.0 * dir, 0)
-	ray_floor.position.x = 10.0 * dir
-	var blocked := ray_wall.is_colliding() or not ray_floor.is_colliding()
 
 	match kind:
 		"line_cutter":
-			_line_cutter(delta, p, blocked)
+			_line_cutter(delta, p)
 		"streamer":
-			if blocked or randf() < 0.01:
+			if randf() < 0.01:
 				dir = -dir
-			position.x += dir * s.speed * delta
+			_walk(s.speed * delta)
 		_:
-			if blocked:
-				dir = -dir
 			if kind == "preorder" and p:
-				dir = signf(p.global_position.x - global_position.x)    # always faces you with the receipt
-				if blocked:
-					dir = 0.0
-			position.x += dir * s.speed * delta
-			if kind == "preorder" and p:
-				dir = signf(p.global_position.x - global_position.x)
+				var distance: float = p.global_position.x - global_position.x
+				if absf(distance) > 8.0:
+					dir = signf(distance) # keep facing the player while stopping safely at edges
+					_walk(s.speed * delta, false)
+			else:
+				_walk(s.speed * delta)
 	# scalper throws price tags
-	if kind == "scalper" and p:
+	if kind == "scalper" and p and Navigation.has_sight(self, p, s.h):
 		shoot_t -= delta
 		if shoot_t <= 0.0:
 			shoot_t = 2.2
@@ -109,14 +110,20 @@ func _physics_process(delta: float) -> void:
 			say(LINES[kind].pick_random())
 
 
-func _line_cutter(delta: float, p, blocked: bool) -> void:
+func _walk(distance: float, turn := true) -> bool:
+	var step := Navigation.walk(self, dir, distance, STATS[kind].h, turn)
+	global_position = step.position
+	dir = step.direction
+	return step.blocked
+
+
+func _line_cutter(delta: float, p) -> void:
 	state_t -= delta
 	match state:
 		"walk":
 			if p:
 				dir = signf(p.global_position.x - global_position.x)
-			if not blocked:
-				position.x += dir * 20.0 * delta
+			_walk(20.0 * delta, false)
 			if state_t <= 0.0 and p:
 				state = "tell"
 				state_t = 0.6
@@ -126,14 +133,13 @@ func _line_cutter(delta: float, p, blocked: bool) -> void:
 				state = "charge"
 				state_t = 1.1
 		"charge":
+			var blocked := _walk(210.0 * delta, false) if state_t > 0.0 else false
 			if blocked or state_t <= 0.0:
 				state = "stunned"
 				state_t = 1.2
 				var gm = get_tree().get_first_node_in_group("game_manager")
 				if gm and blocked:
 					gm._shake(5.0)
-			else:
-				position.x += dir * 210.0 * delta
 		"stunned":
 			if state_t <= 0.0:
 				state = "walk"
